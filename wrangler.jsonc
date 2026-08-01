@@ -1,0 +1,5 @@
+{
+  // Cloudflare Pages config for the static site in ./public
+  "name": "ai-dev-resume-tldr-curator",
+  "pages_build_output_dir": "public"
+}
