@@ -1,0 +1,13 @@
+{
+  "name": "ai-dev-resume-tldr-curator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stewart Barteau — AI developer resume / cover letter + portfolio + PhilArchive corpus, as a single static site served by an assets-only Cloudflare Worker.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
