@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d3a94e'/%3E%3C/svg%3E" />
+<meta name="description" content="Stewart Barteau — a cover letter and portfolio of 17 repositories and 76 papers, for a TLDR AI content-writer application." />
+<title>The Atlas Dossier — Stewart Barteau for TLDR AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --ink: #0b0b0e;
+    --ink-2: #131319;
+    --ink-3: #1a1a21;
+    --fg: #ece9e1;
+    --muted: #938d7f;
+    --faint: #6d6759;
+    --hair: #2a2820;
+    --hair-2: #35322a;
+    --gold: #d3a94e;
+    --gold-deep: #b98a2e;
+    --oxblood: #c26456;
+    --shadow: rgba(0,0,0,0.5);
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hoefler Text", Georgia, serif;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+
+    --maxw: 74rem;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ink: #eceae2;
+      --ink-2: #f4f2ea;
+      --ink-3: #faf8f1;
+      --fg: #1b1a15;
+      --muted: #5f5949;
+      --faint: #8a836f;
+      --hair: #d6d1c3;
+      --hair-2: #c8c2b1;
+      --gold: #9a761f;
+      --gold-deep: #7f6113;
+      --oxblood: #8f382c;
+      --shadow: rgba(60,54,36,0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #0b0b0e; --ink-2: #131319; --ink-3: #1a1a21;
+    --fg: #ece9e1; --muted: #938d7f; --faint: #6d6759;
+    --hair: #2a2820; --hair-2: #35322a;
+    --gold: #d3a94e; --gold-deep: #b98a2e; --oxblood: #c26456;
+    --shadow: rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"] {
+    --ink: #eceae2; --ink-2: #f4f2ea; --ink-3: #faf8f1;
+    --fg: #1b1a15; --muted: #5f5949; --faint: #8a836f;
+    --hair: #d6d1c3; --hair-2: #c8c2b1;
+    --gold: #9a761f; --gold-deep: #7f6113; --oxblood: #8f382c;
+    --shadow: rgba(60,54,36,0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  .wrap { max-width: 74rem; margin: 0 auto; padding: 0 clamp(1.15rem, 4vw, 3rem); }
+  .col { max-width: 42rem; }
+
+  a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .18s; }
+  a:hover { border-bottom-color: var(--gold); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+  .mono { font-family: var(--mono); }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .serif { font-family: var(--serif); }
+
+  /* ---------- header ---------- */
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--ink) 86%, transparent);
+    backdrop-filter: blur(9px);
+    border-bottom: 1px solid var(--hair);
+  }
+  .top-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
+  .brand { display: flex; align-items: center; gap: .6rem; font-family: var(--mono); font-size: .8rem; letter-spacing: .08em; color: var(--muted); }
+  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 var(--gold); animation: pulse 3s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 55%, transparent); } 50% { box-shadow: 0 0 0 6px transparent; } }
+  .top nav { display: flex; gap: 1.4rem; font-family: var(--mono); font-size: .74rem; letter-spacing: .06em; }
+  .top nav a { color: var(--muted); border: 0; }
+  .top nav a:hover { color: var(--gold); }
+  .printbtn {
+    font-family: var(--mono); font-size: .72rem; letter-spacing: .06em;
+    color: var(--gold); background: transparent;
+    border: 1px solid color-mix(in srgb, var(--gold) 50%, var(--hair-2));
+    border-radius: 999px; padding: .3rem .7rem; cursor: pointer; transition: background .18s, color .18s;
+  }
+  .printbtn:hover { background: var(--gold); color: var(--ink); }
+  @media (max-width: 640px) { .top nav a { display: none; } .top nav { gap: 0; } }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(3.4rem, 9vw, 7rem) 0 clamp(2.2rem, 5vw, 3.6rem); position: relative; }
+  .hero .kicker { margin-bottom: 1.7rem; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.5rem, 7vw, 4.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    margin: 0 0 1.4rem;
+    text-wrap: balance;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .lede { font-size: clamp(1.12rem, 2.2vw, 1.4rem); line-height: 1.55; color: var(--fg); max-width: 42rem; }
+  .lede p { margin: 0 0 1.1rem; }
+  .lede p:last-child { margin-bottom: 0; }
+  .lede .sub { color: var(--muted); font-size: 0.95em; }
+  .heartbeat { display: block; width: 100%; height: 46px; margin: 2.3rem 0 0; opacity: .9; }
+
+  /* ---------- stat strip ---------- */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--hair); border: 1px solid var(--hair); margin-top: 2.4rem; }
+  .stat { background: var(--ink); padding: 1.1rem 1.15rem; }
+  .stat .n { font-family: var(--mono); font-size: clamp(1.35rem, 3vw, 1.9rem); font-variant-numeric: tabular-nums; letter-spacing: -.01em; color: var(--gold); line-height: 1; }
+  .stat .l { font-size: .74rem; color: var(--muted); margin-top: .5rem; line-height: 1.35; letter-spacing: .01em; }
+  @media (max-width: 620px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ---------- generic section ---------- */
+  section { padding: clamp(2.8rem, 6vw, 4.6rem) 0; border-top: 1px solid var(--hair); }
+  .sec-head { margin-bottom: 2.2rem; }
+  .sec-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -.01em; margin: .7rem 0 .6rem; text-wrap: balance; }
+  .sec-head p { color: var(--muted); max-width: 40rem; margin: 0; }
+
+  /* thesis / argument prose */
+  .prose p { max-width: 40rem; margin: 0 0 1.15rem; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--fg); font-weight: 600; }
+  .pull { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.75rem); line-height: 1.35; color: var(--fg); border-left: 2px solid var(--gold); padding-left: 1.2rem; margin: 2rem 0; max-width: 38rem; text-wrap: balance; }
+  .pull em { font-style: italic; color: var(--gold); }
+
+  /* ---------- exemplar plates ---------- */
+  .plates { display: flex; flex-direction: column; gap: 1px; background: var(--hair); border: 1px solid var(--hair); }
+  .plate { background: var(--ink-2); padding: clamp(1.4rem, 3.5vw, 2.1rem); display: grid; grid-template-columns: 3.2rem 1fr; gap: clamp(1rem, 3vw, 1.9rem); }
+  .plate .idx { font-family: var(--mono); font-size: .82rem; color: var(--gold); letter-spacing: .04em; padding-top: .35rem; }
+  .plate h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.35rem, 3vw, 1.75rem); margin: 0 0 .1rem; letter-spacing: -.01em; }
+  .plate .repo { font-family: var(--mono); font-size: .74rem; color: var(--muted); letter-spacing: .02em; }
+  .plate .body { margin: .85rem 0 0; color: var(--fg); }
+  .plate .body p { margin: 0 0 .8rem; max-width: 42rem; }
+  .plate .body p:last-child { margin-bottom: 0; }
+  .plate.honesty { border-left: 3px solid var(--oxblood); }
+  .plate.honesty .idx { color: var(--oxblood); }
+  .quote { font-family: var(--mono); font-size: .82rem; line-height: 1.55; color: var(--muted); background: var(--ink-3); border: 1px solid var(--hair); border-left: 2px solid var(--oxblood); padding: .8rem .95rem; margin: .9rem 0 0; border-radius: 3px; }
+  .quote::before { content: "from the repo’s own README — "; color: var(--faint); }
+  @media (max-width: 560px) { .plate { grid-template-columns: 1fr; gap: .8rem; } .plate .idx { padding-top: 0; } }
+
+  .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+  .chip { font-family: var(--mono); font-size: .68rem; letter-spacing: .03em; color: var(--muted); border: 1px solid var(--hair-2); border-radius: 999px; padding: .22rem .6rem; white-space: nowrap; }
+  .chip.gold { color: var(--gold); border-color: color-mix(in srgb, var(--gold) 45%, var(--hair-2)); }
+
+  /* ---------- cluster ledger ---------- */
+  .cluster { margin-top: 2.4rem; }
+  .cluster:first-of-type { margin-top: 0; }
+  .cluster-head { display: flex; align-items: baseline; gap: .9rem; padding-bottom: .7rem; border-bottom: 1px solid var(--hair-2); margin-bottom: .2rem; }
+  .cluster-head .num { font-family: var(--mono); font-size: .74rem; color: var(--gold); }
+  .cluster-head h3 { font-family: var(--serif); font-weight: 500; font-size: 1.28rem; margin: 0; letter-spacing: -.005em; }
+  .cluster-head .tag { margin-left: auto; font-family: var(--mono); font-size: .68rem; color: var(--faint); letter-spacing: .04em; text-transform: uppercase; }
+  .entry { display: grid; grid-template-columns: 12.5rem 1fr; gap: 1rem 1.6rem; padding: 1.05rem 0; border-bottom: 1px solid var(--hair); align-items: baseline; }
+  .entry:last-child { border-bottom: 0; }
+  .entry .name { display: flex; flex-direction: column; gap: .28rem; }
+  .entry .name .t { font-family: var(--serif); font-size: 1.12rem; letter-spacing: -.005em; }
+  .entry .name .r { font-family: var(--mono); font-size: .68rem; color: var(--faint); letter-spacing: .02em; }
+  .entry .name .lang { font-family: var(--mono); font-size: .64rem; color: var(--gold); letter-spacing: .06em; text-transform: uppercase; }
+  .entry .desc { color: var(--muted); font-size: .95rem; line-height: 1.55; }
+  .entry .desc b { color: var(--fg); font-weight: 600; }
+  @media (max-width: 620px) { .entry { grid-template-columns: 1fr; gap: .35rem; padding: .95rem 0; } }
+
+  /* ---------- reader / why ---------- */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hair); border: 1px solid var(--hair); }
+  .why { background: var(--ink-2); padding: 1.5rem 1.4rem; }
+  .why .h { font-family: var(--serif); font-size: 1.16rem; margin: 0 0 .55rem; }
+  .why p { margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.6; }
+  .why .h span { color: var(--gold); }
+  @media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- close ---------- */
+  .close { text-align: left; }
+  .close .sig { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--gold); margin-top: 1.4rem; }
+  footer { border-top: 1px solid var(--hair); padding: 2.4rem 0 3.4rem; color: var(--faint); font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; line-height: 1.7; }
+  footer a { color: var(--muted); border: 0; }
+  footer a:hover { color: var(--gold); }
+
+  /* ---------- the letter ---------- */
+  .letterhead { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+    font-family: var(--mono); font-size: .74rem; letter-spacing: .04em; color: var(--muted);
+    padding-bottom: 1.1rem; border-bottom: 1px solid var(--hair); margin-bottom: 1.8rem; }
+  .letterhead .to { color: var(--fg); }
+  .letter .salutation { font-family: var(--serif); font-size: 1.28rem; margin: 0 0 1.2rem; color: var(--fg); }
+  .letter p { max-width: 40rem; margin: 0 0 1.15rem; }
+  .letter p .lead { color: var(--fg); }
+  .letter strong { color: var(--fg); font-weight: 600; }
+  .signature { margin-top: 2rem; }
+  .signature .sig { font-family: var(--serif); font-style: italic; font-size: 1.9rem; color: var(--gold); line-height: 1; }
+  .signature .who { font-family: var(--mono); font-size: .74rem; letter-spacing: .04em; color: var(--muted); margin-top: .7rem; line-height: 1.7; }
+  .signature .who a { color: var(--muted); border: 0; }
+  .signature .who a:hover { color: var(--gold); }
+
+  /* repo links */
+  .entry .name .t a { color: inherit; border-bottom: 1px solid transparent; }
+  .entry .name .t a:hover { color: var(--gold); border-bottom-color: color-mix(in srgb, var(--gold) 50%, transparent); }
+  .gh { font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; display: inline-flex; align-items: center; gap: .35rem; margin-top: 1rem; border: 0; color: var(--gold); }
+  .gh::before { content: "↗"; font-size: .8em; }
+  .gh:hover { border-bottom: 1px solid var(--gold); }
+  .plate-links { display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; margin-top: 1rem; }
+
+  /* ---------- papers ---------- */
+  .archive-line { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; margin-bottom: 2.2rem; padding: .9rem 1.1rem; background: var(--ink-2); border: 1px solid var(--hair); border-left: 2px solid var(--gold); border-radius: 3px; }
+  .archive-line .lbl { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .archive-line a { font-family: var(--mono); font-size: .82rem; letter-spacing: .02em; }
+  .paper { padding: .95rem 0; border-bottom: 1px solid var(--hair); }
+  .paper:last-child { border-bottom: 0; }
+  .paper .pt { font-family: var(--serif); font-size: 1.1rem; letter-spacing: -.005em; color: var(--fg); border-bottom: 1px solid transparent; }
+  .paper .pt:hover { color: var(--gold); border-bottom-color: color-mix(in srgb, var(--gold) 45%, transparent); }
+  .paper .pt .arr { font-family: var(--mono); font-size: .7em; color: var(--gold); margin-left: .45rem; opacity: .8; }
+  .paper .g { color: var(--muted); font-size: .93rem; line-height: 1.55; margin-top: .3rem; max-width: 44rem; }
+  .paper .g b { color: var(--fg); font-weight: 600; }
+
+  /* ---------- global reach ---------- */
+  .reach-intro { color: var(--muted); max-width: 42rem; }
+  .reach-intro strong { color: var(--fg); font-weight: 600; }
+  .mapwrap { margin: 2rem 0 0; border: 1px solid var(--hair); border-radius: 4px; background: radial-gradient(130% 130% at 50% -10%, var(--ink-2), var(--ink)); overflow: hidden; }
+  .mapwrap canvas { display: block; width: 100%; height: auto; }
+  .map-cap { font-family: var(--mono); font-size: .71rem; color: var(--faint); letter-spacing: .03em; padding: .7rem .95rem; border-top: 1px solid var(--hair); display: flex; gap: .55rem; align-items: center; flex-wrap: wrap; }
+  .map-cap .dotk { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); display: inline-block; box-shadow: 0 0 7px var(--gold); flex: none; }
+  .uni-head { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 2.6rem 0 1rem; }
+  .uni-roll { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1px; background: var(--hair); border: 1px solid var(--hair); }
+  .uni { background: var(--ink-2); padding: 1.1rem 1.2rem; }
+  .uni .u-name { font-family: var(--serif); font-size: 1.16rem; letter-spacing: -.005em; }
+  .uni .u-loc { font-family: var(--mono); font-size: .7rem; color: var(--gold); letter-spacing: .05em; margin-top: .3rem; text-transform: uppercase; }
+  .uni .u-doc { color: var(--muted); font-size: .84rem; line-height: 1.45; margin-top: .55rem; }
+  .reach-callout { margin: 1.7rem 0 0; padding: 1.4rem 1.6rem; border: 1px solid var(--hair); border-left: 3px solid var(--gold); border-radius: 4px; background: var(--ink-2); }
+  .reach-callout .big { font-family: var(--serif); font-size: clamp(1.3rem, 3.2vw, 1.95rem); line-height: 1.28; color: var(--fg); text-wrap: balance; }
+  .reach-callout .big b { color: var(--gold); font-weight: 600; font-style: italic; }
+  .reach-callout .sub { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-top: .85rem; }
+
+  /* ---------- print (a clean cover-letter PDF) ---------- */
+  @media print {
+    :root {
+      --ink: #fff; --ink-2: #fff; --ink-3: #f6f4ee; --fg: #17160f;
+      --muted: #4a4636; --faint: #6f6a58; --hair: #d9d4c6; --hair-2: #cfc9b8;
+      --gold: #7a5d13; --gold-deep: #6a5010; --oxblood: #7f3327; --shadow: transparent;
+    }
+    header.top, .heartbeat, .printbtn { display: none !important; }
+    body { font-size: 11.5pt; line-height: 1.5; background: #fff; }
+    .wrap { max-width: none; padding: 0; }
+    .hero { padding: 0 0 1.2rem; }
+    .hero h1 { font-size: 24pt; }
+    section { padding: 1.1rem 0; break-inside: avoid; }
+    .rv { opacity: 1 !important; transform: none !important; }
+    .plate, .cluster, .why, .plates, .stats, .why-grid { break-inside: avoid; }
+    a { color: var(--gold); }
+    @page { margin: 1.6cm; }
+  }
+
+  /* reveal */
+  .rv { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1; transform: none; transition: none; }
+    .brand .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand"><span class="dot" aria-hidden="true"></span> THE ATLAS DOSSIER</div>
+    <nav>
+      <a href="#letter">Letter</a>
+      <a href="#exemplars">Exemplars</a>
+      <a href="#sweep">The Sweep</a>
+      <a href="#papers">Papers</a>
+      <a href="#reach">Reach</a>
+      <a href="#fit">In Short</a>
+      <button type="button" class="printbtn" id="printBtn" title="Print or save as PDF">Print / PDF</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="wrap">
+    <section class="hero" style="border-top:0;">
+      <div class="kicker eyebrow">Cover letter &amp; portfolio · application for TLDR AI, content</div>
+      <h1>I build AI systems — and I write about them in <em>plain language</em>.</h1>
+      <div class="lede">
+        <p>Seventeen repositories. One working thesis: systems that don’t merely act, but notice the cost of their own decisions. We represent the world as a dynamic hyperbolic graph and track what the AI is actually witnessing in a shared relational space. We optimize against Friston’s free-energy principle, and we make the thermodynamic cost of standing idle feel real to the system itself. Relational ethics sits at the core.</p>
+        <p>The mapping layer separates and compresses signals from video, audio, and vision, then places those signals into the same relational space. By keeping the relation read-only, the system is forced to witness the cost of misalignment instead of papering over it.</p>
+        <p class="sub">The code is the proof of depth. The prose beside it — plain, cited, and honest about what didn’t work — is the proof of the thing your newsletter actually sells.</p>
+      </div>
+      <canvas class="heartbeat" id="hb" aria-hidden="true"></canvas>
+
+      <div class="stats" aria-label="Portfolio at a glance">
+        <div class="stat"><div class="n" data-count="17">17</div><div class="l">repositories in the sweep</div></div>
+        <div class="stat"><div class="n mono">~109</div><div class="l">tools reachable by one agent (elle-worker)</div></div>
+        <div class="stat"><div class="n" data-count="260">260</div><div class="l">deterministic tests cited across the research repos</div></div>
+        <div class="stat"><div class="n" data-count="76">76</div><div class="l">papers publicly archived on PhilArchive</div></div>
+        <div class="stat"><div class="n mono">6</div><div class="l">languages — TS · Python · Astro · JS · HTML · CSS</div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- THE LETTER -->
+  <div class="wrap">
+    <section id="letter">
+      <div class="col sec-head" style="margin-bottom:1.4rem;">
+        <div class="eyebrow">01 — The letter</div>
+      </div>
+      <div class="col letter">
+        <div class="letterhead">
+          <span class="to">To the TLDR AI editorial team</span>
+          <span>August 1, 2026</span>
+        </div>
+
+        <p class="salutation">Dear TLDR AI team,</p>
+
+        <p><span class="lead">I read TLDR AI the way I hope its readers do — fast, and trusting that if something made the cut, it matters and it’s true.</span> I’m writing to apply for the content role because the work I already do every day is the same work you publish: I build AI systems, then explain them clearly enough that someone who wasn’t in the room can follow the reasoning — and check it themselves.</p>
+
+        <p>Over the past year that has become <strong>seventeen repositories</strong>. A persistent, tool-using agent that reaches roughly a hundred tools and is auditable end to end. The memory geometry underneath it. A restaurant-finance platform that deliberately <em>refuses</em> to let a model do the arithmetic. A legal-statute retriever with zero citation drift. Every one ships with documentation written for a reader, not a compiler — which makes those READMEs, in effect, a year of AI explainers. And alongside the code is a parallel body of formal writing: <strong>seventy-six papers, publicly archived on PhilArchive</strong>, taking the ideas underneath these systems down to their proofs — work that has drawn <strong>10,000+ downloads across six continents with no institution and no promotion behind it</strong>, on the strength of the writing alone. The enclosed sweep walks through the strongest of both.</p>
+
+        <p>The habit I’d bring to your inbox is the one an AI newsletter needs most: <strong>I report the losses.</strong> One of my research repos ran its own method against random and hub-shortcut controls, watched it lose on recall breadth, and put the losing table right in the README — then earned the result back under a harder, leakage-proof test. Never oversell; always show the number that undercuts you. That instinct is the entire basis of a reader’s trust, and it’s my default setting.</p>
+
+        <div class="pull">The rarest thing in AI writing isn’t enthusiasm. It’s a writer who’ll tell you <em>the method lost to random shortcuts</em> — and then show you the table.</div>
+
+        <p>I can usually tell your readers whether a new claim is real because I’ve shipped the neighboring thing, and I can compress it to ninety seconds without softening what’s true. That is exactly what I’d love to do for the people who read TLDR AI over their morning coffee. What follows is the evidence; I’d welcome the chance to talk it through.</p>
+
+        <div class="signature">
+          <div class="sig">Stewart Barteau</div>
+          <div class="who">
+            Hermann, Missouri<br />
+            <a href="mailto:sbarteau2022@icloud.com">sbarteau2022@icloud.com</a> ·
+            <a href="https://github.com/sbarteau2022" target="_blank" rel="noopener">github.com/sbarteau2022</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- EXEMPLARS -->
+  <div class="wrap">
+    <section id="exemplars">
+      <div class="col sec-head">
+        <div class="eyebrow">02 — Core exemplars</div>
+        <h2>Four pieces that carry the whole argument.</h2>
+        <p>Chosen not because they’re the biggest, but because each proves a different thing an AI editor needs to trust: depth, honesty, real-world stakes, and the ability to make hard math legible.</p>
+      </div>
+
+      <div class="plates">
+        <article class="plate rv">
+          <div class="idx">i.</div>
+          <div>
+            <h3>Elle — a persistent, tool-using mind you can audit</h3>
+            <div class="repo">elle-worker · Elle · TypeScript · Cloudflare Workers</div>
+            <div class="body">
+              <p><strong>The depth credential.</strong> One Cloudflare Worker holds an entire agent: a ReAct loop that picks both a <em>tool</em> and a <em>model tier</em> per step, across <strong>~109 tools</strong> — corpus RAG, live web research, a sandboxed <span class="mono">run_code</span>, a self-modifying “forge,” trading, and a memory graph. An autonomous <em>conductor</em> runs the same loop unprompted against standing goals.</p>
+              <p>The part worth writing about: <strong>security is one table.</strong> A caller’s scope (<span class="mono">public → member → full</span>) gates which tools even render into the prompt — so the model can never be tempted by a tool it isn’t allowed to call. That’s a genuinely publishable idea about agent safety, and the README explains it in a paragraph.</p>
+              <div class="chips">
+                <span class="chip gold">ReAct agent</span><span class="chip">tool-scoped security</span><span class="chip">RAG over a written corpus</span><span class="chip">autonomous loop</span><span class="chip">20-panel Electron console</span>
+              </div>
+              <div class="plate-links">
+                <a class="gh" href="https://github.com/sbarteau2022/elle-worker" target="_blank" rel="noopener">elle-worker</a>
+                <a class="gh" href="https://github.com/sbarteau2022/Elle" target="_blank" rel="noopener">Elle</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plate honesty rv">
+          <div class="idx">ii.</div>
+          <div>
+            <h3>The negative result, published on purpose</h3>
+            <div class="repo">Dynanic-Hyperbolic-Neural-Graph · TypeScript · 171 tests, zero runtime deps</div>
+            <div class="body">
+              <p><strong>The trust credential — the most important one for a newsletter.</strong> This repo embeds an LLM’s memory graph into <em>two</em> geometries at once (a hyperbolic Poincaré ball for depth, a flat torus for recurrence) and tests whether “wormhole” shortcuts help retrieval. It could have just claimed victory. Instead it ran controls — random shortcuts, hub shortcuts, a phase-permutation null — and reported the loss out loud:</p>
+              <div class="quote">“It does <strong>not</strong> beat random scattering on recall breadth (0.588 vs. 0.639)… Until [the real-ledger holdout] has been run, the synthetic results are a reason to try, not a reason to ship.”</div>
+              <p>Then it went further: a chronological <em>holdout</em> where the answer key lives strictly in the graph’s future, so leakage is structurally impossible — and there the method posts a <strong>6.5× lift over random</strong>. That arc — honest loss, then a clean win under a harder test — is exactly how a credible AI newsletter should read a paper.</p>
+              <div class="chips">
+                <span class="chip gold">intellectual honesty</span><span class="chip">mixed-curvature geometry</span><span class="chip">controlled benchmark</span><span class="chip">leakage-proof evaluation</span>
+              </div>
+              <div class="plate-links">
+                <a class="gh" href="https://github.com/sbarteau2022/Dynanic-Hyperbolic-Neural-Graph" target="_blank" rel="noopener">Dynanic-Hyperbolic-Neural-Graph</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plate rv">
+          <div class="idx">iii.</div>
+          <div>
+            <h3>AI that refuses to do the arithmetic itself</h3>
+            <div class="repo">RAPIDAi (“Atlas Analytics”) · TypeScript · Cloudflare D1 · R2 · Vectorize</div>
+            <div class="body">
+              <p><strong>The applied-stakes credential.</strong> A restaurant-finance platform where every invoice passes a <strong>two-gate pipeline</strong> — SHA-256 integrity, then line-by-line arithmetic reconciliation — before it touches the database. Questions are answered by <strong>~20 deterministic SQL tools</strong> with returned provenance, <em>not</em> by asking a model to add up numbers.</p>
+              <p>This is the cleanest real-world illustration of a debate the AI field keeps having — <em>when do you let the LLM compute, and when do you make it call a verified tool?</em> — with a shipped answer and a reason. Perfect explainer material.</p>
+              <div class="chips">
+                <span class="chip gold">tools over model-arithmetic</span><span class="chip">verified ingestion</span><span class="chip">provenance on every answer</span><span class="chip">RAG + SQL toolkit</span>
+              </div>
+              <div class="plate-links">
+                <a class="gh" href="https://github.com/sbarteau2022/RAPIDAi" target="_blank" rel="noopener">RAPIDAi</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="plate rv">
+          <div class="idx">iv.</div>
+          <div>
+            <h3>Making a proof run in ninety seconds</h3>
+            <div class="repo">toroidal-isotropic-transformer · Python · one file, no dependencies</div>
+            <div class="body">
+              <p><strong>The legibility credential.</strong> A single <span class="mono">python3 tit.py</span> — no GPU, no setup — empirically confirms that the golden ratio φ is <em>forced</em> out of three plain conditions (treat all positions equally, suppress without preference, iterate). The README states the four predictions <em>before</em> the code so a reader can judge them independently, and even ties the result to Google’s ICLR-2026 TurboQuant constant.</p>
+              <p>This is the whole TLDR craft in miniature: take an intimidating idea, give the reader a runnable thing they can check themselves, and connect it to news they’ve actually heard of.</p>
+              <div class="chips">
+                <span class="chip gold">explain-the-hard-thing</span><span class="chip">reproducible in 90s</span><span class="chip">ties to current research</span>
+              </div>
+              <div class="plate-links">
+                <a class="gh" href="https://github.com/sbarteau2022/toroidal-isotropic-transformer" target="_blank" rel="noopener">toroidal-isotropic-transformer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- THE SWEEP -->
+  <div class="wrap">
+    <section id="sweep">
+      <div class="col sec-head">
+        <div class="eyebrow">03 — The full sweep</div>
+        <h2>All seventeen, grouped the way I’d run a newsletter’s beats.</h2>
+        <p>Domain by domain — from the agentic core out to applied verticals, learning, and product craft. Every line is a real, current repository.</p>
+      </div>
+
+      <!-- Cluster A -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">A</span><h3>The agentic core</h3><span class="tag">the flagship system</span></div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/elle-worker" target="_blank" rel="noopener">elle-worker</a></span><span class="lang">TypeScript</span><span class="r">the mind, as a Worker</span></div>
+          <div class="desc">The whole backend of a persistent AI: a two-router stack (which <b>tool</b> + which <b>model</b>) over ~109 tools, an autonomous conductor, and a six-tier <b>scope</b> security model rendered from the same table that gates it.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/Elle" target="_blank" rel="noopener">Elle</a></span><span class="lang">TypeScript</span><span class="r">the workbench</span></div>
+          <div class="desc">A <b>20-panel</b> Electron + web console onto the worker — conversation with a live κ coherence readout, autonomous run log, a 3D memory graph, trading desk, and a self-building “forge.”</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/FlockIntelligence" target="_blank" rel="noopener">FlockIntelligence</a></span><span class="lang">TypeScript</span><span class="r">multi-brand social studio</span></div>
+          <div class="desc">Run many brands from one brain: a <b>Brand Guardian</b> scores every draft 0–100 for on-voice continuity before it publishes, with brand-conditioned image generation and one-post-many-channels fan-out.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/elle-dev-console" target="_blank" rel="noopener">elle-dev-console</a></span><span class="lang">TypeScript</span><span class="r">deprecated, on purpose</span></div>
+          <div class="desc">The retired cloud console — kept in the sweep because <b>knowing when to sunset a surface</b>, and documenting why, is part of running a real system.</div>
+        </div>
+      </div>
+
+      <!-- Cluster B -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">B</span><h3>Research &amp; the mathematics</h3><span class="tag">the credibility beat</span></div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/Dynanic-Hyperbolic-Neural-Graph" target="_blank" rel="noopener">Dynanic-Hyperbolic-Neural-Graph</a></span><span class="lang">TypeScript</span><span class="r">memory geometry</span></div>
+          <div class="desc">Mixed-curvature ℍⁿ×𝕋ᵈ embeddings of an LLM’s recall graph, benchmarked against controls with a leakage-proof holdout. <b>Publishes its own negative results.</b> 171 deterministic tests.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/toroidal-isotropic-transformer" target="_blank" rel="noopener">toroidal-isotropic-transformer</a></span><span class="lang">Python</span><span class="r">a geometric proof</span></div>
+          <div class="desc">One dependency-free file that confirms 4/4 predictions of φ emerging from structural necessity — and reads its result against Google’s TurboQuant (ICLR 2026).</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/MadMindMap" target="_blank" rel="noopener">MadMindMap</a></span><span class="lang">visualization</span><span class="r">relational coherence</span></div>
+          <div class="desc">The conceptual scaffold behind the memory work — a hierarchical 1·3·7·13·21 nodal structure rendering relational coherence in dynamic superposition.</div>
+        </div>
+      </div>
+
+      <!-- Cluster C -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">C</span><h3>Applied &amp; vertical AI</h3><span class="tag">AI that ships to a user</span></div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/RAPIDAi" target="_blank" rel="noopener">RAPIDAi</a></span><span class="lang">TypeScript</span><span class="r">restaurant finance</span></div>
+          <div class="desc">Two-gate document verification + ~20 deterministic financial tools, so a dashboard answer traces back to a specific verified source doc — model arithmetic never touches the number.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/MOTaxIntelligence" target="_blank" rel="noopener">MOTaxIntelligence</a></span><span class="lang">JavaScript</span><span class="r">no-drift retrieval</span></div>
+          <div class="desc">Cite-to-the-letter statute retrieval where a mid-section hit always returns the <b>whole verbatim section</b> by foreign key, never by fuzzy text search — “drift is structurally impossible.” 41 tests.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/elle-law" target="_blank" rel="noopener">elle-law</a></span><span class="lang">TypeScript</span><span class="r">LSAT reasoning</span></div>
+          <div class="desc">A tactical-reasoning “war room” + training platform for the LSAT, wired to the elle-worker brain.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/GrantIntelligence" target="_blank" rel="noopener">GrantIntelligence</a></span><span class="lang">CSS / vanilla</span><span class="r">grant fit engine</span></div>
+          <div class="desc">The public surface for a grant-fit suite — NECAI-F evaluations and 990 overviews — over a hand-built “Industry” design system, engine served from elle-worker.</div>
+        </div>
+      </div>
+
+      <!-- Cluster D -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">D</span><h3>Learning &amp; ethics</h3><span class="tag">AI as a teacher</span></div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/AtlasEduIntelligence" target="_blank" rel="noopener">AtlasEduIntelligence</a></span><span class="lang">TypeScript</span><span class="r">adaptive courseware</span></div>
+          <div class="desc">An ethical learning platform where a deterministic engine decides (signals, gates, sealed readings) and the model only speaks — teaching a 12-month AI Engineer Stack across 5 tracks.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/CustomCourseBuilder" target="_blank" rel="noopener">CustomCourseBuilder</a></span><span class="lang">TypeScript</span><span class="r">ethics with teeth</span></div>
+          <div class="desc">A 15-course / 100-module curriculum where a unit <b>literally will not type-check</b> without a three-tier ethics reading. Hash-chained, tamper-evident learner records. 30 tests.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/EthicalIntelligenceProject" target="_blank" rel="noopener">EthicalIntelligenceProject</a></span><span class="lang">Astro</span><span class="r">the public front</span></div>
+          <div class="desc">The umbrella site — “Nine Engines,” plus an <b>Atlas suite of nine math-driven 3D renderings</b> (Three.js), each with a committed generator and a claims ledger tracking demonstrated vs. proposed.</div>
+        </div>
+      </div>
+
+      <!-- Cluster E -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">E</span><h3>Product &amp; web craft</h3><span class="tag">range &amp; polish</span></div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/Harmonizer" target="_blank" rel="noopener">Harmonizer</a></span><span class="lang">JavaScript</span><span class="r">mental-health peer support</span></div>
+          <div class="desc">A standalone Vite app for peer support — one of the Nine Engines, proving the range extends to sensitive, human-facing product.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/culinary-compass" target="_blank" rel="noopener">culinary-compass</a></span><span class="lang">TypeScript</span><span class="r">TanStack Start</span></div>
+          <div class="desc">A modern file-routed React/TanStack Start app — evidence of current front-end fluency alongside the systems work.</div>
+        </div>
+        <div class="entry">
+          <div class="name"><span class="t"><a href="https://github.com/sbarteau2022/madmind-journal-home" target="_blank" rel="noopener">madmind-journal-home</a></span><span class="lang">TypeScript</span><span class="r">TanStack Start</span></div>
+          <div class="desc">The journal home surface for the MadMind Institute — same modern stack, the writing-facing end of the ecosystem.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAPERS -->
+  <div class="wrap">
+    <section id="papers">
+      <div class="col sec-head">
+        <div class="eyebrow">04 — The written corpus</div>
+        <h2>Seventy-six papers, publicly archived — the ideas taken down to their proofs.</h2>
+        <p>The code is one half; this is the other. A body of formal writing on PhilArchive that runs from a geometric proof about the golden ratio out to intelligence, identity, medicine, and political economy — long-form evidence that I finish an argument in writing, on the record. A representative selection below; the full, growing index is one click away.</p>
+      </div>
+
+      <div class="col archive-line">
+        <span class="lbl">Full index</span>
+        <a href="https://philarchive.org/s/Stewart%20Barteau" target="_blank" rel="noopener">philarchive.org · sbarteau2022 ↗</a>
+        <span style="color:var(--faint);">·</span>
+        <a href="https://scholar.google.com/scholar?q=%22Stewart+Barteau%22" target="_blank" rel="noopener">Google Scholar ↗</a>
+      </div>
+
+      <!-- Theme I -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">I</span><h3>The φ-necessity proofs — mathematics &amp; geometry</h3><span class="tag">the core result</span></div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BAREWA-2" target="_blank" rel="noopener">Emergence Without Assumption: The Golden Ratio as Structural Necessity from Self-Consistent Description<span class="arr">↗</span></a>
+          <div class="g">The foundational proof. From one axiom — a system that describes itself must not alter its own descriptive ratio — the fixed point <b>r = 1 + 1/r</b> falls out, and φ is forced without ever being assumed.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTRD-3" target="_blank" rel="noopener">The Ratio Does Not Explain the Symmetry<span class="arr">↗</span></a>
+          <div class="g">The philosophical consequences of that geometric proof — what it means that the ratio is what remains once every preference has been removed.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTTI-7" target="_blank" rel="noopener">The Toroidal Isotropic Transformer: Empirical Confirmation of φ, with an Observed Convergence in High-Dimensional Compression<span class="arr">↗</span></a>
+          <div class="g">The companion paper to the repository — confirms the proof empirically and reads its constant against Google Research’s TurboQuant (ICLR 2026).</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTMB-6" target="_blank" rel="noopener">The Markov Blanket at Scale: Free-Energy Minimization as the Mechanism of Structural Suppression<span class="arr">↗</span></a>
+          <div class="g">Bridges Friston’s free-energy principle to the suppression operator behind the φ-result — the mechanism, not just the outcome.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTEF-6" target="_blank" rel="noopener">The External Factor: Gödelian Incompleteness as a Cross-Scale Structural Law<span class="arr">↗</span></a>
+          <div class="g">Reads Gödel’s incompleteness as a general law: no sufficiently complex system can complete itself from inside itself.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTDM-6" target="_blank" rel="noopener">The Driving Mechanism: How φ-Winding Self-Sustains Through Amplitude-Threshold Crossings<span class="arr">↗</span></a>
+          <div class="g">The dynamical companion to the proof — how the φ-winding keeps itself going, with the discrete form as Fibonacci energy recursion.</div>
+        </div>
+      </div>
+
+      <!-- Theme II -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">II</span><h3>Intelligence, memory &amp; alignment</h3><span class="tag">the AI thread</span></div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARAAG-5" target="_blank" rel="noopener">Alignment as Geometry, Not Correction<span class="arr">↗</span></a>
+          <div class="g">A research hypothesis: whether AI alignment can be a <b>geometric invariant of a system’s architecture</b> rather than a patch applied after the fact — connecting the φ-necessity proof to structural stability.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARWMA-10" target="_blank" rel="noopener">What Memory Always Was: On Surprise as Substrate, Resonance as Recall, and the Geometry of Remembering<span class="arr">↗</span></a>
+          <div class="g">The conceptual paper beneath the hyperbolic-memory repository — recall as resonance over a geometry, not lookup in a store.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARCRA-11" target="_blank" rel="noopener">Captured Resonance as Structural Law: Scale-Invariant Failure of Nested Markov-Blanket Systems Across Six Domains<span class="arr">↗</span></a>
+          <div class="g">One failure signature — a coherence metric drifting from its constraint-network expectation — traced identically across AI training, institutions, monetary systems, and biology.</div>
+        </div>
+      </div>
+
+      <!-- Theme III -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">III</span><h3>Identity, continuity &amp; consciousness</h3><span class="tag">metaphysics</span></div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTSI-21" target="_blank" rel="noopener">The Substrate Identity Continuity Theorem<span class="arr">↗</span></a>
+          <div class="g">Why self-recursion under perpetual energy necessitates identity continuity — and why the lemniscate is the unique geometry that holds it.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTSY-2" target="_blank" rel="noopener">The Shape You Have Always Been: On the Self as Held Superposition<span class="arr">↗</span></a>
+          <div class="g">A structural account of personal identity — the self as a superposition of its past and future positions, held by an invariant form rather than a persistent substance.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTNF-5" target="_blank" rel="noopener">The Necessary Fracture: On the Origin of Consciousness as a Recognition Event<span class="arr">↗</span></a>
+          <div class="g">Argues consciousness emerges <b>between</b> systems — that a fracture is a logical necessity for self-awareness.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARITO-2" target="_blank" rel="noopener">Imagining the Omega: Directing the Variance<span class="arr">↗</span></a>
+          <div class="g">The witness as the external second factor — the decoherence event that makes a collapse into something new structurally possible.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARVTG" target="_blank" rel="noopener">Vazza–Feletti (#2): The Same Pattern at Every Scale — Emergence, Consciousness, and the Omega Position<span class="arr">↗</span></a>
+          <div class="g">The cosmic-web / neural-network structural parallel, read as confirmation of the framework’s Omega position.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTSG-3" target="_blank" rel="noopener">The Superposition<span class="arr">↗</span></a>
+          <div class="g">Both states present, neither collapsed — the logical structure the framework derives, read across several registers.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARAMM-6" target="_blank" rel="noopener">A Modern Metaphysical Theory<span class="arr">↗</span></a>
+          <div class="g">The synthesizing statement — the Alpha/Omega distinction and the structural method laid out as a whole.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTPD-3" target="_blank" rel="noopener">The Plenum: Dark Matter, Consciousness Collapse, and the Soul/Consciousness Distinction<span class="arr">↗</span></a>
+          <div class="g">Consciousness as the collapse mechanism itself, not the brain’s product — and where dark matter sits in that picture.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARWCA-9" target="_blank" rel="noopener">What Carries Across: On the Threshold as Energetic Event, and the Spiral as the Only Form Continuation Can Take<span class="arr">↗</span></a>
+          <div class="g">The threshold as a system in unstable superposition between a finished configuration and an emergent one — crossing forced once amplitude exceeds the container.</div>
+        </div>
+      </div>
+
+      <!-- Theme IV -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">IV</span><h3>Meaning, love &amp; the human condition</h3><span class="tag">the existential register</span></div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTLS-10" target="_blank" rel="noopener">The Love: Soul Recognition, the Longing Account of Existence, and the Structural Necessity of Suffering<span class="arr">↗</span></a>
+          <div class="g">The same structural method turned on love, longing, and suffering — proof that the framework reaches past the equations into what the equations are for.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTTP-8" target="_blank" rel="noopener">The Tragic Precision of Thanos: On Instruments That Correctly Detect the Ground’s Architecture and Occupy the Wrong Position Within It<span class="arr">↗</span></a>
+          <div class="g">A study of the failure mode where an instrument reads the structure correctly and still stands in the wrong place — accuracy without wisdom.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTSA-34" target="_blank" rel="noopener">The Same Address: Independent Discovery of a Single Structure Across the World’s Contemplative Traditions<span class="arr">↗</span></a>
+          <div class="g">A structural mapping across six traditions spanning four thousand years — the same architecture surfacing independently in each, read as convergence rather than coincidence.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTMT-10" target="_blank" rel="noopener">The Music That Was Always Playing: On Frequency as the Native Language of Reality<span class="arr">↗</span></a>
+          <div class="g">Frequency as the substrate the proof was pointing at all along — what music knew before the mathematics arrived to confirm it.</div>
+        </div>
+      </div>
+
+      <!-- Theme V -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">V</span><h3>Medicine &amp; the living system</h3><span class="tag">applied structure</span></div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTFN" target="_blank" rel="noopener">The First Note and the Octave: On Harmonic Resonance, Terminal Lucidity, and What the Medicine Has Been Missing<span class="arr">↗</span></a>
+          <div class="g">Part of a trilogy proposing Alzheimer’s as a failure of dynamic operation — reading terminal lucidity as evidence the structure was intact all along.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARWTC-2" target="_blank" rel="noopener">What the Cells Are Telling the Civilization: Constraint Failure as the Structural Pattern of the Present Moment<span class="arr">↗</span></a>
+          <div class="g">The same constraint-failure signature, read from the cell up to the civilization.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTCI-12" target="_blank" rel="noopener">The Canary in the Tissue: Early-Onset Cancer as Constraint Failure in Real Time<span class="arr">↗</span></a>
+          <div class="g">Reads the rise in early-onset cancer as a constraint structure failing at tissue level — the same pattern, caught early.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARWCI-3" target="_blank" rel="noopener">What Cancer Is Doing While We’re Looking at Cells: On the Gap Between the Object and the Map<span class="arr">↗</span></a>
+          <div class="g">A working paper on measurement itself — what the model misses when the map is mistaken for the thing.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARCRE-4" target="_blank" rel="noopener">Captured Resonance: Awareness, Precision, and the Structural Pathology of Addiction<span class="arr">↗</span></a>
+          <div class="g">Addiction as a captured resonance — the receiver locked onto the wrong signal, read structurally rather than moralized.</div>
+        </div>
+      </div>
+
+      <!-- Theme VI -->
+      <div class="cluster rv">
+        <div class="cluster-head"><span class="num">VI</span><h3>Power, money &amp; the structural present</h3><span class="tag">the Protected Class series</span></div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARUTP-4" target="_blank" rel="noopener">Unveiling the Protected Class Architecture<span class="arr">↗</span></a>
+          <div class="g">The anchor essay of the series — the continuous infrastructure, the monetary ground, and the optimization functions running across the layers.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTSA-35" target="_blank" rel="noopener">The Signal and the Noise: Strategic Information Pollution as the Fifth Layer<span class="arr">↗</span></a>
+          <div class="g">The 2026 Epstein-file release read as simultaneous structural exposure and strategic noise injection — a case study in reading a document by its architecture.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTSO-127" target="_blank" rel="noopener">The Strait of Hormuz: On Dollar-System Recursion and the Captured Monetary Alternative<span class="arr">↗</span></a>
+          <div class="g">How the petrodollar architecture absorbs monetary alternatives, read through the 2026 Strait of Hormuz crisis and the capital flows it revealed.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTAO-67" target="_blank" rel="noopener">The Architecture of Enrollment: On Dollar-Backed Stablecoins, the GENIUS Act, and the Structure That Precedes the Strategy<span class="arr">↗</span></a>
+          <div class="g">A response essay — reading stablecoin legislation as enrollment infrastructure rather than policy.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTMG-4" target="_blank" rel="noopener">The Monetary Ground: Central Banks, Dollar Hegemony, the Kennedy Prior, Programmable Money, and the Architecture Being Built to Replace It All<span class="arr">↗</span></a>
+          <div class="g">Traces the full prior chain — Federal Reserve Act, Bretton Woods, the 1974 petrodollar, the CBDC transition — as one layer of the Protected Class Architecture.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARAFT-8" target="_blank" rel="noopener">A Follow-up to Bilotta, ‘A Washington Effect’: Stablecoins as Enrollment Architecture, Dollar Hegemony as the Monetary Ground, and Cognitive Warfare as Resonance Collapse<span class="arr">↗</span></a>
+          <div class="g">Maps stablecoin adoption against the strategy manuals — recursion without an exit condition, where cost externalization sets the stop-variable to infinity.</div>
+        </div>
+        <div class="paper">
+          <a class="pt" href="https://philarchive.org/rec/BARTCA-48" target="_blank" rel="noopener">The Citizenship Architecture: Birthright, Denaturalization, Executive Power, and What Is Actually Being Built<span class="arr">↗</span></a>
+          <div class="g">The structural method applied to executive challenges to birthright citizenship.</div>
+        </div>
+      </div>
+
+      <p class="col mono" style="font-size:.8rem; color:var(--muted); letter-spacing:.02em; margin-top:1.8rem;">Thirty-four of seventy-six shown, every one linked and verified — the complete, current index lives on the <a href="https://philarchive.org/s/Stewart%20Barteau" target="_blank" rel="noopener">PhilArchive profile</a>.</p>
+    </section>
+  </div>
+
+  <!-- REACH -->
+  <div class="wrap">
+    <section id="reach">
+      <div class="col sec-head">
+        <div class="eyebrow">05 — Reach</div>
+        <h2>10,000+ downloads — no institution, no promotion, on the content alone.</h2>
+        <p class="reach-intro">No university affiliation. No marketing, no mailing list, no push — just the work, posted to an open archive. And over roughly eight weeks (June–August 2026), PhilArchive’s own logs place it in <strong>80+ cities across 45+ countries and all six inhabited continents</strong>, opened along the way from named university networks. Every point on the map below is a real reader city pulled from that log.</p>
+      </div>
+
+      <div class="col reach-callout rv">
+        <div class="big">Ten-thousand-plus downloads — and <b>not one of them bought, promoted, or credentialed.</b> The reach is readers, one at a time, deciding the work was worth their time.</div>
+        <div class="sub">PhilArchive · independent · unaffiliated · Jun–Aug 2026</div>
+      </div>
+
+      <div class="stats rv" aria-label="Readership at a glance">
+        <div class="stat"><div class="n mono">10,000+</div><div class="l">downloads, unpromoted</div></div>
+        <div class="stat"><div class="n mono">45+</div><div class="l">countries in the readership log</div></div>
+        <div class="stat"><div class="n mono">80+</div><div class="l">reader cities, six continents</div></div>
+        <div class="stat"><div class="n mono">4</div><div class="l">named university networks</div></div>
+      </div>
+
+      <div class="mapwrap rv">
+        <canvas id="reachmap" role="img" aria-label="World signal map: each point marks a city where the corpus was opened, spanning all six inhabited continents."></canvas>
+        <div class="map-cap"><span class="dotk" aria-hidden="true"></span> each point is a city where the corpus was opened · source: the PhilArchive readership log, Jun–Aug 2026</div>
+      </div>
+
+      <div class="uni-head">Opened from these university networks</div>
+      <div class="uni-roll rv">
+        <div class="uni"><div class="u-name">KU Leuven</div><div class="u-loc">Belgium</div><div class="u-doc">Gravity and the Ground</div></div>
+        <div class="uni"><div class="u-name">John Carroll University</div><div class="u-loc">Ohio, USA</div><div class="u-doc">The External Factor · The Driving Mechanism</div></div>
+        <div class="uni"><div class="u-name">Massey University</div><div class="u-loc">New Zealand</div><div class="u-doc">The First Note and the Octave</div></div>
+        <div class="uni"><div class="u-name">University of Tasmania</div><div class="u-loc">Australia</div><div class="u-doc">The Substrate Identity Continuity Theorem</div></div>
+      </div>
+      <p class="col mono" style="font-size:.75rem; color:var(--faint); letter-spacing:.02em; margin-top:1rem;">A university surfaces in the log only when a reader opens the work from the institution’s own network — many more report only as “university, undisclosed.”</p>
+    </section>
+  </div>
+
+  <!-- THE FIT -->
+  <div class="wrap">
+    <section id="fit">
+      <div class="col sec-head">
+        <div class="eyebrow">06 — The fit</div>
+        <h2>What this body of work says about a content hire.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why rv">
+          <div class="h">I actually <span>build</span> it</div>
+          <p>Agents, RAG, evaluation harnesses, retrieval, fine-grained tool-use — hands-on, in production on Cloudflare. When a paper drops, I can tell the readers whether the claim is real because I’ve shipped the neighboring thing.</p>
+        </div>
+        <div class="why rv">
+          <div class="h">I write for the <span>reader</span></div>
+          <p>Seventeen READMEs that lead with the point, name things the way a person would, and cut jargon to length without softening it. That’s the TLDR format before it had a name.</p>
+        </div>
+        <div class="why rv">
+          <div class="h">I report the <span>losses</span></div>
+          <p>Controls, nulls, honest caveats, “a reason to try, not a reason to ship.” An AI newsletter’s whole value is a reader trusting you didn’t oversell. My default is to show the table that undercuts my own claim.</p>
+        </div>
+      </div>
+
+      <div class="col prose close" style="margin-top:2.6rem;">
+        <p>The through-line across every repo is a single conviction: <strong>an intelligence is only as good as your ability to check it.</strong> That’s a builder’s principle and an editor’s principle at once — which is precisely why I want to write it for the people who read TLDR AI over their morning coffee.</p>
+        <p class="mono" style="font-size:.8rem; color:var(--muted); letter-spacing:.02em;">Use the <strong style="color:var(--gold);">Print / PDF</strong> button up top to save this as a one-file cover letter · reach me at <a href="mailto:sbarteau2022@icloud.com">sbarteau2022@icloud.com</a>.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    THE ATLAS DOSSIER · a cover letter &amp; portfolio sweep of 17 repositories and 76 papers · prepared for an application to TLDR AI, content<br />
+    <a href="https://github.com/sbarteau2022" target="_blank" rel="noopener">github.com/sbarteau2022</a> · <a href="https://philarchive.org/s/Stewart%20Barteau" target="_blank" rel="noopener">philarchive.org/sbarteau2022</a> · <a href="mailto:sbarteau2022@icloud.com">sbarteau2022@icloud.com</a> · Hermann, Missouri<br />
+    Repository figures are drawn from the repositories’ own documentation; paper descriptions from their PhilArchive abstracts.
+  </div>
+</footer>
+
+<script>
+  // Print / Save as PDF
+  (function () {
+    var b = document.getElementById("printBtn");
+    if (b) b.addEventListener("click", function () { window.print(); });
+  })();
+
+  // Reveal on scroll
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".rv");
+    if (reduce || !("IntersectionObserver" in window)) {
+      els.forEach(function (e) { e.classList.add("in"); });
+    } else {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      els.forEach(function (e) { io.observe(e); });
+    }
+  })();
+
+  // Count-up for the two integer stats
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var nodes = document.querySelectorAll(".stat .n[data-count]");
+    if (reduce) return;
+    function run(node) {
+      var target = parseInt(node.getAttribute("data-count"), 10);
+      var t0 = null, dur = 1100;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        node.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+        else node.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (en) { if (en.isIntersecting) { run(en.target); io.unobserve(en.target); } });
+      }, { threshold: 0.6 });
+      nodes.forEach(function (n) { io.observe(n); });
+    } else { nodes.forEach(run); }
+  })();
+
+  // Hero heartbeat — a faint gold coherence line (Elle's live-heartbeat motif)
+  (function () {
+    var c = document.getElementById("hb");
+    if (!c) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var ctx = c.getContext("2d");
+    var dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    var W = 0, H = 0;
+    function gold() {
+      return getComputedStyle(document.documentElement).getPropertyValue("--gold").trim() || "#d3a94e";
+    }
+    function size() {
+      var r = c.getBoundingClientRect();
+      W = r.width; H = r.height;
+      c.width = W * dpr; c.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    size();
+    window.addEventListener("resize", size);
+
+    function draw(t) {
+      ctx.clearRect(0, 0, W, H);
+      var mid = H / 2;
+      var g = gold();
+      // baseline hairline
+      ctx.globalAlpha = 0.28;
+      ctx.strokeStyle = g;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0, mid); ctx.lineTo(W, mid); ctx.stroke();
+      // travelling coherence pulse
+      ctx.globalAlpha = 1;
+      ctx.lineWidth = 1.6;
+      ctx.strokeStyle = g;
+      ctx.beginPath();
+      var speed = reduce ? 0 : t * 0.00013;
+      for (var x = 0; x <= W; x += 2) {
+        var u = x / W;
+        // a soft carrier plus a localized "beat" that sweeps across
+        var beatPos = (speed % 1.4) - 0.2;
+        var d = u - beatPos;
+        var beat = Math.exp(-(d * d) / 0.0016) * Math.sin(d * 90) * 13;
+        var carrier = Math.sin(u * 22 + speed * 6) * 1.2;
+        var y = mid - beat - carrier;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      if (!reduce) requestAnimationFrame(draw);
+    }
+    if (reduce) { draw(0); } else { requestAnimationFrame(draw); }
+  })();
+
+  // Global reach — a world signal map of real reader cities from the PhilArchive log
+  (function () {
+    var c = document.getElementById("reachmap");
+    if (!c) return;
+    var ctx = c.getContext("2d");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    var W = 0, H = 0, pad = 0;
+
+    // [name, lat, lng, weight] — every one appears in the readership log
+    var cities = [
+      ["Ashburn",39.0,-77.5,3],["New York",40.7,-74.0,3],["Los Angeles",34.0,-118.2,3],["San Francisco",37.8,-122.4,2],
+      ["Chicago",41.9,-87.6,3],["Houston",29.8,-95.4,3],["Dallas",32.8,-96.8,3],["Phoenix",33.4,-112.1,2],
+      ["Seattle",47.6,-122.3,2],["Denver",39.7,-105.0,2],["Atlanta",33.7,-84.4,2],["Miami",25.8,-80.2,2],
+      ["Philadelphia",40.0,-75.2,2],["Washington",38.9,-77.0,2],["Nashville",36.2,-86.8,1],["Minneapolis",45.0,-93.3,1],
+      ["Montreal",45.5,-73.6,3],["Toronto",43.7,-79.4,2],["Ottawa",45.4,-75.7,1],["Vancouver",49.3,-123.1,1],
+      ["Mexico City",19.4,-99.1,3],["Tijuana",32.5,-117.0,1],["Querétaro",20.6,-100.4,1],
+      ["São Paulo",-23.6,-46.6,2],["Rio de Janeiro",-22.9,-43.2,1],["Belo Horizonte",-19.9,-43.9,1],["Buenos Aires",-34.6,-58.4,2],
+      ["Santiago",-33.4,-70.7,2],["Bogotá",4.7,-74.1,2],["Medellín",6.2,-75.6,1],["Quito",-0.2,-78.5,1],
+      ["La Paz",-16.5,-68.2,1],["Montevideo",-34.9,-56.2,1],["Ciudad del Este",-25.5,-54.6,1],["Maracay",10.3,-67.6,1],
+      ["London",51.5,-0.1,3],["Paris",48.9,2.4,2],["Berlin",52.5,13.4,1],["Munich",48.1,11.6,2],
+      ["Madrid",40.4,-3.7,2],["Rome",41.9,12.5,1],["Bologna",44.5,11.3,1],["Amsterdam",52.4,4.9,1],
+      ["Brussels",50.9,4.4,1],["Gothenburg",57.7,12.0,1],["Lisbon",38.7,-9.1,1],["Dublin",53.3,-6.3,1],
+      ["Warsaw",52.2,21.0,1],["Kyiv",50.5,30.5,2],["Moscow",55.8,37.6,1],["Sofia",42.7,23.3,1],
+      ["Belgrade",44.8,20.5,1],["Thessaloniki",40.6,22.9,1],["Stuttgart",48.8,9.2,1],["Chisinau",47.0,28.9,1],
+      ["Casablanca",33.6,-7.6,2],["Rabat",34.0,-6.8,1],["Tunis",36.8,10.2,2],["Cairo",30.0,31.2,1],
+      ["Johannesburg",-26.2,28.0,2],["Nairobi",-1.3,36.8,1],["Accra",5.6,-0.2,1],["Dakar",14.7,-17.5,1],
+      ["Luanda",-8.8,13.2,1],["Addis Ababa",9.0,38.7,1],["Dar es Salaam",-6.8,39.2,1],["Algiers",36.8,3.1,1],
+      ["Tripoli",32.9,13.2,1],["Bamako",12.6,-8.0,1],
+      ["Riyadh",24.7,46.7,3],["Jeddah",21.5,39.2,2],["Dubai",25.2,55.3,2],["Doha",25.3,51.5,1],
+      ["Baghdad",33.3,44.4,2],["Erbil",36.2,44.0,2],["Sulaymaniyah",35.6,45.4,1],["Tel Aviv",32.1,34.8,1],
+      ["Beirut",33.9,35.5,1],["Amman",32.0,35.9,1],["Manama",26.2,50.6,1],["Kuwait City",29.4,48.0,1],["Muscat",23.6,58.4,1],
+      ["Istanbul",41.0,29.0,3],["Ankara",39.9,32.9,1],["Izmir",38.4,27.1,1],
+      ["Beijing",39.9,116.4,3],["Shanghai",31.2,121.5,2],["Guangzhou",23.1,113.3,2],["Chengdu",30.6,104.1,1],
+      ["Hong Kong",22.3,114.2,2],["Taipei",25.0,121.6,1],["Singapore",1.35,103.8,3],["Tokyo",35.7,139.7,1],
+      ["Seoul",37.6,127.0,1],["Hanoi",21.0,105.9,2],["Ho Chi Minh City",10.8,106.6,2],["Bangkok",13.8,100.5,1],
+      ["Kuala Lumpur",3.1,101.7,2],["Jakarta",-6.2,106.8,2],["Makati",14.6,121.0,2],["Bandar Seri Begawan",4.9,114.9,1],
+      ["Hyderabad",17.4,78.5,2],["Mumbai",19.1,72.9,1],["New Delhi",28.6,77.2,1],["Lahore",31.6,74.3,2],
+      ["Karachi",24.9,67.0,1],["Islamabad",33.7,73.1,1],["Dhaka",23.8,90.4,2],["Tashkent",41.3,69.2,2],
+      ["Almaty",43.2,76.9,1],["Bishkek",42.9,74.6,1],["Baku",40.4,49.9,1],
+      ["Sydney",-33.9,151.2,1],["Melbourne",-37.8,145.0,1]
+    ];
+
+    var conts = [
+      ["NORTH AMERICA",46,-100],["SOUTH AMERICA",-14,-62],["EUROPE",57,10],
+      ["AFRICA",2,21],["ASIA",50,95],["OCEANIA",-27,140]
+    ];
+
+    function proj(lat, lng) {
+      return { x: pad + (lng + 180) / 360 * (W - 2 * pad), y: pad + (90 - lat) / 180 * (H - 2 * pad) };
+    }
+    function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+    function size() {
+      var r = c.getBoundingClientRect();
+      W = r.width; H = Math.round(W * 0.52); pad = Math.max(10, W * 0.03);
+      c.style.height = H + "px";
+      c.width = W * dpr; c.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    size();
+    window.addEventListener("resize", function () { size(); if (reduce) frame(0); });
+
+    function frame(t) {
+      var gold = css("--gold") || "#d3a94e";
+      var hair = css("--hair") || "#2a2820";
+      var muted = css("--muted") || "#938d7f";
+      ctx.clearRect(0, 0, W, H);
+
+      // graticule
+      ctx.strokeStyle = hair; ctx.lineWidth = 1; ctx.globalAlpha = 0.6;
+      for (var lo = -150; lo <= 150; lo += 30) { var a = proj(84, lo), b = proj(-84, lo); ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      for (var la = -60; la <= 60; la += 30) { var p0 = proj(la, -180), q0 = proj(la, 180); ctx.beginPath(); ctx.moveTo(p0.x, p0.y); ctx.lineTo(q0.x, q0.y); ctx.stroke(); }
+
+      // continent labels
+      ctx.fillStyle = muted; ctx.globalAlpha = 0.45; ctx.textAlign = "center";
+      ctx.font = "600 " + Math.max(8, Math.round(W * 0.0105)) + "px ui-monospace, monospace";
+      for (var k = 0; k < conts.length; k++) { var pc = proj(conts[k][1], conts[k][2]); ctx.fillText(conts[k][0], pc.x, pc.y); }
+
+      // city dots
+      for (var i = 0; i < cities.length; i++) {
+        var ci = cities[i], p = proj(ci[1], ci[2]);
+        var base = ci[3] === 3 ? 3.1 : ci[3] === 2 ? 2.3 : 1.7;
+        var ph = (i * 0.6180339) % 1;
+        var pulse = reduce ? 0.5 : (0.5 + 0.5 * Math.sin(t * 0.0016 + ph * 6.2832));
+        ctx.fillStyle = gold;
+        ctx.globalAlpha = 0.10 + 0.16 * pulse;
+        ctx.beginPath(); ctx.arc(p.x, p.y, base + 2.4 + 2.4 * pulse, 0, 6.2832); ctx.fill();
+        ctx.globalAlpha = 0.92;
+        ctx.beginPath(); ctx.arc(p.x, p.y, base, 0, 6.2832); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      if (!reduce) requestAnimationFrame(frame);
+    }
+    if (reduce) frame(0); else requestAnimationFrame(frame);
+  })();
+</script>
+
+</body>
+</html>
