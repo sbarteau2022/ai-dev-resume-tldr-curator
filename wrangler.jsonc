@@ -1,5 +1,10 @@
 {
-  // Cloudflare Pages config for the static site in ./public
+  // Assets-only Cloudflare Worker: no script, just static files in ./public.
+  // Deployed by `wrangler deploy` (what Cloudflare Workers Builds runs on push).
   "name": "ai-dev-resume-tldr-curator",
-  "pages_build_output_dir": "public"
+  "compatibility_date": "2025-11-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  }
 }

@@ -5,8 +5,8 @@ content-writer role: a cover letter, a sweep of 17 repositories, and a linked
 catalog of the 76-paper PhilArchive corpus, delivered as one self-contained,
 responsive, theme-aware web page.
 
-- **Live page:** the whole site is a single file, [`public/index.html`](public/index.html)
-  — no build step, no framework, no external requests (all CSS/JS inline, fonts
+- **The page** is a single file, [`public/index.html`](public/index.html) —
+  no build step, no framework, no external requests (all CSS/JS inline, fonts
   are system stacks).
 - **Print / PDF:** the page ships a print stylesheet, so the browser's
   Print → Save as PDF produces a clean cover-letter document.
@@ -15,41 +15,34 @@ responsive, theme-aware web page.
 
 ```
 public/index.html   the entire site (HTML + inline CSS + inline JS)
-wrangler.jsonc      Cloudflare Pages config (name + output dir)
+wrangler.jsonc      assets-only Cloudflare Worker config (serves ./public)
 package.json        wrangler scripts (dev, deploy)
-.github/workflows/  deploy.yml — deploys to Cloudflare Pages on push to main
 ```
 
 ## Develop
 
 ```bash
 npm install
-npm run dev        # wrangler pages dev — serves ./public locally
+npm run dev        # wrangler dev — serves ./public locally
 ```
 
 Or just open `public/index.html` in a browser — it needs nothing else.
 
-## Deploy to Cloudflare Pages
+## Deploy (Cloudflare Workers)
 
-Two ways:
+This repo is an **assets-only Worker**: `wrangler.jsonc` declares `./public`
+as the static-asset directory and no script, so `wrangler deploy` publishes the
+site with no server code.
 
-1. **Dashboard (simplest).** In the Cloudflare dashboard: Workers & Pages →
-   Create → Pages → Connect to Git → this repo. Set **build command** empty and
-   **build output directory** to `public`. Every push to `main` publishes.
+- **Git integration (Cloudflare Workers Builds).** The repo is connected to the
+  Cloudflare `ai-dev-resume-tldr-curator` Worker; every push to the production
+  branch runs `wrangler deploy` and publishes automatically.
+- **Manual, from your machine:**
 
-2. **GitHub Actions (included).** `.github/workflows/deploy.yml` runs
-   `wrangler pages deploy` on every push to `main`. It's a no-op until you add
-   two repository secrets — then it publishes to a Pages project named
-   `ai-dev-resume-tldr-curator`:
-   - `CLOUDFLARE_API_TOKEN`
-   - `CLOUDFLARE_ACCOUNT_ID`
-
-Manual one-off deploy from your machine:
-
-```bash
-npm install
-npx wrangler pages deploy   # reads wrangler.jsonc
-```
+  ```bash
+  npm install
+  npm run deploy     # wrangler deploy
+  ```
 
 ## Content note
 
