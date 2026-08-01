@@ -248,6 +248,10 @@
   .uni .u-name { font-family: var(--serif); font-size: 1.16rem; letter-spacing: -.005em; }
   .uni .u-loc { font-family: var(--mono); font-size: .7rem; color: var(--gold); letter-spacing: .05em; margin-top: .3rem; text-transform: uppercase; }
   .uni .u-doc { color: var(--muted); font-size: .84rem; line-height: 1.45; margin-top: .55rem; }
+  .reach-callout { margin: 1.7rem 0 0; padding: 1.4rem 1.6rem; border: 1px solid var(--hair); border-left: 3px solid var(--gold); border-radius: 4px; background: var(--ink-2); }
+  .reach-callout .big { font-family: var(--serif); font-size: clamp(1.3rem, 3.2vw, 1.95rem); line-height: 1.28; color: var(--fg); text-wrap: balance; }
+  .reach-callout .big b { color: var(--gold); font-weight: 600; font-style: italic; }
+  .reach-callout .sub { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-top: .85rem; }
 
   /* ---------- print (a clean cover-letter PDF) ---------- */
   @media print {
@@ -331,7 +335,7 @@
 
         <p><span class="lead">I read TLDR AI the way I hope its readers do — fast, and trusting that if something made the cut, it matters and it’s true.</span> I’m writing to apply for the content role because the work I already do every day is the same work you publish: I build AI systems, then explain them clearly enough that someone who wasn’t in the room can follow the reasoning — and check it themselves.</p>
 
-        <p>Over the past year that has become <strong>seventeen repositories</strong>. A persistent, tool-using agent that reaches roughly a hundred tools and is auditable end to end. The memory geometry underneath it. A restaurant-finance platform that deliberately <em>refuses</em> to let a model do the arithmetic. A legal-statute retriever with zero citation drift. Every one ships with documentation written for a reader, not a compiler — which makes those READMEs, in effect, a year of AI explainers. And alongside the code is a parallel body of formal writing: <strong>seventy-six papers, publicly archived on PhilArchive</strong>, taking the ideas underneath these systems down to their proofs. The enclosed sweep walks through the strongest of both.</p>
+        <p>Over the past year that has become <strong>seventeen repositories</strong>. A persistent, tool-using agent that reaches roughly a hundred tools and is auditable end to end. The memory geometry underneath it. A restaurant-finance platform that deliberately <em>refuses</em> to let a model do the arithmetic. A legal-statute retriever with zero citation drift. Every one ships with documentation written for a reader, not a compiler — which makes those READMEs, in effect, a year of AI explainers. And alongside the code is a parallel body of formal writing: <strong>seventy-six papers, publicly archived on PhilArchive</strong>, taking the ideas underneath these systems down to their proofs — work that has drawn <strong>10,000+ downloads across six continents with no institution and no promotion behind it</strong>, on the strength of the writing alone. The enclosed sweep walks through the strongest of both.</p>
 
         <p>The habit I’d bring to your inbox is the one an AI newsletter needs most: <strong>I report the losses.</strong> One of my research repos ran its own method against random and hub-shortcut controls, watched it lose on recall breadth, and put the losing table right in the README — then earned the result back under a harder, leakage-proof test. Never oversell; always show the number that undercuts you. That instinct is the entire basis of a reader’s trust, and it’s my default setting.</p>
 
@@ -733,14 +737,19 @@
     <section id="reach">
       <div class="col sec-head">
         <div class="eyebrow">05 — Reach</div>
-        <h2>It’s being read — on six continents, and inside the university.</h2>
-        <p class="reach-intro">Not projections. PhilArchive logs every read with a coarse origin, and over roughly eight weeks (June–August 2026) those logs place the corpus in <strong>80+ cities across 45+ countries and all six inhabited continents</strong> — opened, along the way, from named university networks. Every point on the map below is a real reader city pulled from that log.</p>
+        <h2>10,000+ downloads — no institution, no promotion, on the content alone.</h2>
+        <p class="reach-intro">No university affiliation. No marketing, no mailing list, no push — just the work, posted to an open archive. And over roughly eight weeks (June–August 2026), PhilArchive’s own logs place it in <strong>80+ cities across 45+ countries and all six inhabited continents</strong>, opened along the way from named university networks. Every point on the map below is a real reader city pulled from that log.</p>
       </div>
 
-      <div class="stats rv" style="margin-top:0;" aria-label="Readership at a glance">
+      <div class="col reach-callout rv">
+        <div class="big">Ten-thousand-plus downloads — and <b>not one of them bought, promoted, or credentialed.</b> The reach is readers, one at a time, deciding the work was worth their time.</div>
+        <div class="sub">PhilArchive · independent · unaffiliated · Jun–Aug 2026</div>
+      </div>
+
+      <div class="stats rv" aria-label="Readership at a glance">
+        <div class="stat"><div class="n mono">10,000+</div><div class="l">downloads, unpromoted</div></div>
         <div class="stat"><div class="n mono">45+</div><div class="l">countries in the readership log</div></div>
         <div class="stat"><div class="n mono">80+</div><div class="l">reader cities, six continents</div></div>
-        <div class="stat"><div class="n mono">~8</div><div class="l">weeks of logs (Jun–Aug 2026)</div></div>
         <div class="stat"><div class="n mono">4</div><div class="l">named university networks</div></div>
       </div>
 
