@@ -7,7 +7,10 @@ A single self-contained page: cover letter, sweep of 17 repositories, and a link
 ## What’s in the box
 
 - **The page** is one file: [`public/index.html`](public/index.html)  
-  No build step, no framework, no external requests. All CSS and JS are inline. Fonts are system stacks.
+  No framework, no external requests. All CSS and JS are inline. Fonts are system stacks. The one
+  generated section is Reach — `npm run build` writes the reader-city map and the city/country
+  figures beside it from `data/reader-cities.json`, and `npm run check` fails if the page has
+  drifted from that data.
 - **Print / PDF:** the page includes a print stylesheet. Browser → Print → Save as PDF produces a clean cover-letter document.
 
 ## Structure
