@@ -31,8 +31,8 @@ Or just open `public/index.html` in a browser. It needs nothing else.
 
 This is an **assets-only Worker**. `wrangler.jsonc` points at `./public` and declares no script, so `wrangler deploy` publishes the site with no server code.
 
-- **Git integration (Cloudflare Workers Builds)**  
-  The repo is connected to the Cloudflare Worker `ai-dev-resume-tldr-curator`. Every push to the production branch runs `wrangler deploy` and publishes automatically.
+- **GitHub Actions (the deploy path)**  
+  Every push to `main` runs the Deploy Worker workflow (`.github/workflows/deploy.yml`), which validates the page and publishes it to the Cloudflare Worker `ai-dev-resume-tldr-curator` with `wrangler deploy`. It needs two repository secrets — `CLOUDFLARE_API_TOKEN` (with the "Workers Scripts — Edit" permission) and `CLOUDFLARE_ACCOUNT_ID`; until they're set, the workflow passes with a warning instead of deploying.
 
 - **Manual deploy from your machine**
 
