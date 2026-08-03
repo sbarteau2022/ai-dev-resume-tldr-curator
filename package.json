@@ -5,9 +5,14 @@
   "description": "Stewart Barteau — AI developer resume / cover letter + portfolio + PhilArchive corpus, as a single static site served by an assets-only Cloudflare Worker.",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "check:html": "html-validate public/index.html",
+    "check:js": "node scripts/check-inline-js.mjs public/index.html",
+    "check:deploy": "wrangler deploy --dry-run",
+    "check": "npm run check:html && npm run check:js && npm run check:deploy"
   },
   "devDependencies": {
+    "html-validate": "^11.0.0",
     "wrangler": "^4.0.0"
   }
 }

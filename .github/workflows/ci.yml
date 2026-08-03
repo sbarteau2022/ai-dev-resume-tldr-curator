@@ -1,0 +1,25 @@
+name: CI
+
+# This is a single static HTML page with no build step (see README) — deploys
+# are handled by Cloudflare Workers Builds outside of GitHub Actions. This
+# workflow only validates that a push/PR hasn't broken the page: HTML
+# structure, inline JS syntax, and that the Worker's assets config still
+# bundles cleanly (wrangler --dry-run, no credentials required/used).
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
