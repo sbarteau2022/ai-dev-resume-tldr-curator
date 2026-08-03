@@ -1,4 +1,4 @@
-# ai-dev-resume-tldr-curator
+ # ai-dev-resume-tldr-curator
 
 **The Atlas Dossier** — Stewart Barteau’s application package for a TLDR AI content-writer role.
 
