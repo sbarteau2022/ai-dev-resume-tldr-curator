@@ -1,0 +1,918 @@
+{
+  "$comment": "Canonical readership geography from the PhilArchive log (Jun-Aug 2026). Generated artefact - edit only against the log. scripts/build-reach.mjs injects this into public/index.html; npm run check:reach fails if the page drifts from it.",
+  "source": "PhilArchive readership log, Jun-Aug 2026",
+  "cities": [
+    {
+      "name": "Ashburn",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 39,
+      "lon": -77.5,
+      "tier": 3
+    },
+    {
+      "name": "New York",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 40.7,
+      "lon": -74,
+      "tier": 3
+    },
+    {
+      "name": "Los Angeles",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 34,
+      "lon": -118.2,
+      "tier": 3
+    },
+    {
+      "name": "San Francisco",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 37.8,
+      "lon": -122.4,
+      "tier": 2
+    },
+    {
+      "name": "Chicago",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 41.9,
+      "lon": -87.6,
+      "tier": 3
+    },
+    {
+      "name": "Houston",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 29.8,
+      "lon": -95.4,
+      "tier": 3
+    },
+    {
+      "name": "Dallas",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 32.8,
+      "lon": -96.8,
+      "tier": 3
+    },
+    {
+      "name": "Phoenix",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 33.4,
+      "lon": -112.1,
+      "tier": 2
+    },
+    {
+      "name": "Seattle",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 47.6,
+      "lon": -122.3,
+      "tier": 2
+    },
+    {
+      "name": "Denver",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 39.7,
+      "lon": -105,
+      "tier": 2
+    },
+    {
+      "name": "Atlanta",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 33.7,
+      "lon": -84.4,
+      "tier": 2
+    },
+    {
+      "name": "Miami",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 25.8,
+      "lon": -80.2,
+      "tier": 2
+    },
+    {
+      "name": "Philadelphia",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 40,
+      "lon": -75.2,
+      "tier": 2
+    },
+    {
+      "name": "Washington",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 38.9,
+      "lon": -77,
+      "tier": 2
+    },
+    {
+      "name": "Nashville",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 36.2,
+      "lon": -86.8,
+      "tier": 1
+    },
+    {
+      "name": "Minneapolis",
+      "country": "United States",
+      "continent": "North America",
+      "lat": 45,
+      "lon": -93.3,
+      "tier": 1
+    },
+    {
+      "name": "Montreal",
+      "country": "Canada",
+      "continent": "North America",
+      "lat": 45.5,
+      "lon": -73.6,
+      "tier": 3
+    },
+    {
+      "name": "Toronto",
+      "country": "Canada",
+      "continent": "North America",
+      "lat": 43.7,
+      "lon": -79.4,
+      "tier": 2
+    },
+    {
+      "name": "Ottawa",
+      "country": "Canada",
+      "continent": "North America",
+      "lat": 45.4,
+      "lon": -75.7,
+      "tier": 1
+    },
+    {
+      "name": "Vancouver",
+      "country": "Canada",
+      "continent": "North America",
+      "lat": 49.3,
+      "lon": -123.1,
+      "tier": 1
+    },
+    {
+      "name": "Mexico City",
+      "country": "Mexico",
+      "continent": "North America",
+      "lat": 19.4,
+      "lon": -99.1,
+      "tier": 3
+    },
+    {
+      "name": "Tijuana",
+      "country": "Mexico",
+      "continent": "North America",
+      "lat": 32.5,
+      "lon": -117,
+      "tier": 1
+    },
+    {
+      "name": "Querétaro",
+      "country": "Mexico",
+      "continent": "North America",
+      "lat": 20.6,
+      "lon": -100.4,
+      "tier": 1
+    },
+    {
+      "name": "São Paulo",
+      "country": "Brazil",
+      "continent": "South America",
+      "lat": -23.6,
+      "lon": -46.6,
+      "tier": 2
+    },
+    {
+      "name": "Rio de Janeiro",
+      "country": "Brazil",
+      "continent": "South America",
+      "lat": -22.9,
+      "lon": -43.2,
+      "tier": 1
+    },
+    {
+      "name": "Belo Horizonte",
+      "country": "Brazil",
+      "continent": "South America",
+      "lat": -19.9,
+      "lon": -43.9,
+      "tier": 1
+    },
+    {
+      "name": "Buenos Aires",
+      "country": "Argentina",
+      "continent": "South America",
+      "lat": -34.6,
+      "lon": -58.4,
+      "tier": 2
+    },
+    {
+      "name": "Santiago",
+      "country": "Chile",
+      "continent": "South America",
+      "lat": -33.4,
+      "lon": -70.7,
+      "tier": 2
+    },
+    {
+      "name": "Bogotá",
+      "country": "Colombia",
+      "continent": "South America",
+      "lat": 4.7,
+      "lon": -74.1,
+      "tier": 2
+    },
+    {
+      "name": "Medellín",
+      "country": "Colombia",
+      "continent": "South America",
+      "lat": 6.2,
+      "lon": -75.6,
+      "tier": 1
+    },
+    {
+      "name": "Quito",
+      "country": "Ecuador",
+      "continent": "South America",
+      "lat": -0.2,
+      "lon": -78.5,
+      "tier": 1
+    },
+    {
+      "name": "La Paz",
+      "country": "Bolivia",
+      "continent": "South America",
+      "lat": -16.5,
+      "lon": -68.2,
+      "tier": 1
+    },
+    {
+      "name": "Montevideo",
+      "country": "Uruguay",
+      "continent": "South America",
+      "lat": -34.9,
+      "lon": -56.2,
+      "tier": 1
+    },
+    {
+      "name": "Ciudad del Este",
+      "country": "Paraguay",
+      "continent": "South America",
+      "lat": -25.5,
+      "lon": -54.6,
+      "tier": 1
+    },
+    {
+      "name": "Maracay",
+      "country": "Venezuela",
+      "continent": "South America",
+      "lat": 10.3,
+      "lon": -67.6,
+      "tier": 1
+    },
+    {
+      "name": "London",
+      "country": "United Kingdom",
+      "continent": "Europe",
+      "lat": 51.5,
+      "lon": -0.1,
+      "tier": 3
+    },
+    {
+      "name": "Paris",
+      "country": "France",
+      "continent": "Europe",
+      "lat": 48.9,
+      "lon": 2.4,
+      "tier": 2
+    },
+    {
+      "name": "Berlin",
+      "country": "Germany",
+      "continent": "Europe",
+      "lat": 52.5,
+      "lon": 13.4,
+      "tier": 1
+    },
+    {
+      "name": "Munich",
+      "country": "Germany",
+      "continent": "Europe",
+      "lat": 48.1,
+      "lon": 11.6,
+      "tier": 2
+    },
+    {
+      "name": "Madrid",
+      "country": "Spain",
+      "continent": "Europe",
+      "lat": 40.4,
+      "lon": -3.7,
+      "tier": 2
+    },
+    {
+      "name": "Rome",
+      "country": "Italy",
+      "continent": "Europe",
+      "lat": 41.9,
+      "lon": 12.5,
+      "tier": 1
+    },
+    {
+      "name": "Bologna",
+      "country": "Italy",
+      "continent": "Europe",
+      "lat": 44.5,
+      "lon": 11.3,
+      "tier": 1
+    },
+    {
+      "name": "Amsterdam",
+      "country": "Netherlands",
+      "continent": "Europe",
+      "lat": 52.4,
+      "lon": 4.9,
+      "tier": 1
+    },
+    {
+      "name": "Brussels",
+      "country": "Belgium",
+      "continent": "Europe",
+      "lat": 50.9,
+      "lon": 4.4,
+      "tier": 1
+    },
+    {
+      "name": "Gothenburg",
+      "country": "Sweden",
+      "continent": "Europe",
+      "lat": 57.7,
+      "lon": 12,
+      "tier": 1
+    },
+    {
+      "name": "Lisbon",
+      "country": "Portugal",
+      "continent": "Europe",
+      "lat": 38.7,
+      "lon": -9.1,
+      "tier": 1
+    },
+    {
+      "name": "Dublin",
+      "country": "Ireland",
+      "continent": "Europe",
+      "lat": 53.3,
+      "lon": -6.3,
+      "tier": 1
+    },
+    {
+      "name": "Warsaw",
+      "country": "Poland",
+      "continent": "Europe",
+      "lat": 52.2,
+      "lon": 21,
+      "tier": 1
+    },
+    {
+      "name": "Kyiv",
+      "country": "Ukraine",
+      "continent": "Europe",
+      "lat": 50.5,
+      "lon": 30.5,
+      "tier": 2
+    },
+    {
+      "name": "Moscow",
+      "country": "Russia",
+      "continent": "Europe",
+      "lat": 55.8,
+      "lon": 37.6,
+      "tier": 1
+    },
+    {
+      "name": "Sofia",
+      "country": "Bulgaria",
+      "continent": "Europe",
+      "lat": 42.7,
+      "lon": 23.3,
+      "tier": 1
+    },
+    {
+      "name": "Belgrade",
+      "country": "Serbia",
+      "continent": "Europe",
+      "lat": 44.8,
+      "lon": 20.5,
+      "tier": 1
+    },
+    {
+      "name": "Thessaloniki",
+      "country": "Greece",
+      "continent": "Europe",
+      "lat": 40.6,
+      "lon": 22.9,
+      "tier": 1
+    },
+    {
+      "name": "Stuttgart",
+      "country": "Germany",
+      "continent": "Europe",
+      "lat": 48.8,
+      "lon": 9.2,
+      "tier": 1
+    },
+    {
+      "name": "Chisinau",
+      "country": "Moldova",
+      "continent": "Europe",
+      "lat": 47,
+      "lon": 28.9,
+      "tier": 1
+    },
+    {
+      "name": "Casablanca",
+      "country": "Morocco",
+      "continent": "Africa",
+      "lat": 33.6,
+      "lon": -7.6,
+      "tier": 2
+    },
+    {
+      "name": "Rabat",
+      "country": "Morocco",
+      "continent": "Africa",
+      "lat": 34,
+      "lon": -6.8,
+      "tier": 1
+    },
+    {
+      "name": "Tunis",
+      "country": "Tunisia",
+      "continent": "Africa",
+      "lat": 36.8,
+      "lon": 10.2,
+      "tier": 2
+    },
+    {
+      "name": "Cairo",
+      "country": "Egypt",
+      "continent": "Africa",
+      "lat": 30,
+      "lon": 31.2,
+      "tier": 1
+    },
+    {
+      "name": "Johannesburg",
+      "country": "South Africa",
+      "continent": "Africa",
+      "lat": -26.2,
+      "lon": 28,
+      "tier": 2
+    },
+    {
+      "name": "Nairobi",
+      "country": "Kenya",
+      "continent": "Africa",
+      "lat": -1.3,
+      "lon": 36.8,
+      "tier": 1
+    },
+    {
+      "name": "Accra",
+      "country": "Ghana",
+      "continent": "Africa",
+      "lat": 5.6,
+      "lon": -0.2,
+      "tier": 1
+    },
+    {
+      "name": "Dakar",
+      "country": "Senegal",
+      "continent": "Africa",
+      "lat": 14.7,
+      "lon": -17.5,
+      "tier": 1
+    },
+    {
+      "name": "Luanda",
+      "country": "Angola",
+      "continent": "Africa",
+      "lat": -8.8,
+      "lon": 13.2,
+      "tier": 1
+    },
+    {
+      "name": "Addis Ababa",
+      "country": "Ethiopia",
+      "continent": "Africa",
+      "lat": 9,
+      "lon": 38.7,
+      "tier": 1
+    },
+    {
+      "name": "Dar es Salaam",
+      "country": "Tanzania",
+      "continent": "Africa",
+      "lat": -6.8,
+      "lon": 39.2,
+      "tier": 1
+    },
+    {
+      "name": "Algiers",
+      "country": "Algeria",
+      "continent": "Africa",
+      "lat": 36.8,
+      "lon": 3.1,
+      "tier": 1
+    },
+    {
+      "name": "Tripoli",
+      "country": "Libya",
+      "continent": "Africa",
+      "lat": 32.9,
+      "lon": 13.2,
+      "tier": 1
+    },
+    {
+      "name": "Bamako",
+      "country": "Mali",
+      "continent": "Africa",
+      "lat": 12.6,
+      "lon": -8,
+      "tier": 1
+    },
+    {
+      "name": "Riyadh",
+      "country": "Saudi Arabia",
+      "continent": "Asia",
+      "lat": 24.7,
+      "lon": 46.7,
+      "tier": 3
+    },
+    {
+      "name": "Jeddah",
+      "country": "Saudi Arabia",
+      "continent": "Asia",
+      "lat": 21.5,
+      "lon": 39.2,
+      "tier": 2
+    },
+    {
+      "name": "Dubai",
+      "country": "United Arab Emirates",
+      "continent": "Asia",
+      "lat": 25.2,
+      "lon": 55.3,
+      "tier": 2
+    },
+    {
+      "name": "Doha",
+      "country": "Qatar",
+      "continent": "Asia",
+      "lat": 25.3,
+      "lon": 51.5,
+      "tier": 1
+    },
+    {
+      "name": "Baghdad",
+      "country": "Iraq",
+      "continent": "Asia",
+      "lat": 33.3,
+      "lon": 44.4,
+      "tier": 2
+    },
+    {
+      "name": "Erbil",
+      "country": "Iraq",
+      "continent": "Asia",
+      "lat": 36.2,
+      "lon": 44,
+      "tier": 2
+    },
+    {
+      "name": "Sulaymaniyah",
+      "country": "Iraq",
+      "continent": "Asia",
+      "lat": 35.6,
+      "lon": 45.4,
+      "tier": 1
+    },
+    {
+      "name": "Tel Aviv",
+      "country": "Israel",
+      "continent": "Asia",
+      "lat": 32.1,
+      "lon": 34.8,
+      "tier": 1
+    },
+    {
+      "name": "Beirut",
+      "country": "Lebanon",
+      "continent": "Asia",
+      "lat": 33.9,
+      "lon": 35.5,
+      "tier": 1
+    },
+    {
+      "name": "Amman",
+      "country": "Jordan",
+      "continent": "Asia",
+      "lat": 32,
+      "lon": 35.9,
+      "tier": 1
+    },
+    {
+      "name": "Manama",
+      "country": "Bahrain",
+      "continent": "Asia",
+      "lat": 26.2,
+      "lon": 50.6,
+      "tier": 1
+    },
+    {
+      "name": "Kuwait City",
+      "country": "Kuwait",
+      "continent": "Asia",
+      "lat": 29.4,
+      "lon": 48,
+      "tier": 1
+    },
+    {
+      "name": "Muscat",
+      "country": "Oman",
+      "continent": "Asia",
+      "lat": 23.6,
+      "lon": 58.4,
+      "tier": 1
+    },
+    {
+      "name": "Istanbul",
+      "country": "Türkiye",
+      "continent": "Asia",
+      "lat": 41,
+      "lon": 29,
+      "tier": 3
+    },
+    {
+      "name": "Ankara",
+      "country": "Türkiye",
+      "continent": "Asia",
+      "lat": 39.9,
+      "lon": 32.9,
+      "tier": 1
+    },
+    {
+      "name": "Izmir",
+      "country": "Türkiye",
+      "continent": "Asia",
+      "lat": 38.4,
+      "lon": 27.1,
+      "tier": 1
+    },
+    {
+      "name": "Beijing",
+      "country": "China",
+      "continent": "Asia",
+      "lat": 39.9,
+      "lon": 116.4,
+      "tier": 3
+    },
+    {
+      "name": "Shanghai",
+      "country": "China",
+      "continent": "Asia",
+      "lat": 31.2,
+      "lon": 121.5,
+      "tier": 2
+    },
+    {
+      "name": "Guangzhou",
+      "country": "China",
+      "continent": "Asia",
+      "lat": 23.1,
+      "lon": 113.3,
+      "tier": 2
+    },
+    {
+      "name": "Chengdu",
+      "country": "China",
+      "continent": "Asia",
+      "lat": 30.6,
+      "lon": 104.1,
+      "tier": 1
+    },
+    {
+      "name": "Hong Kong",
+      "country": "Hong Kong SAR",
+      "continent": "Asia",
+      "lat": 22.3,
+      "lon": 114.2,
+      "tier": 2
+    },
+    {
+      "name": "Taipei",
+      "country": "Taiwan",
+      "continent": "Asia",
+      "lat": 25,
+      "lon": 121.6,
+      "tier": 1
+    },
+    {
+      "name": "Singapore",
+      "country": "Singapore",
+      "continent": "Asia",
+      "lat": 1.35,
+      "lon": 103.8,
+      "tier": 3
+    },
+    {
+      "name": "Tokyo",
+      "country": "Japan",
+      "continent": "Asia",
+      "lat": 35.7,
+      "lon": 139.7,
+      "tier": 1
+    },
+    {
+      "name": "Seoul",
+      "country": "South Korea",
+      "continent": "Asia",
+      "lat": 37.6,
+      "lon": 127,
+      "tier": 1
+    },
+    {
+      "name": "Hanoi",
+      "country": "Vietnam",
+      "continent": "Asia",
+      "lat": 21,
+      "lon": 105.9,
+      "tier": 2
+    },
+    {
+      "name": "Ho Chi Minh City",
+      "country": "Vietnam",
+      "continent": "Asia",
+      "lat": 10.8,
+      "lon": 106.6,
+      "tier": 2
+    },
+    {
+      "name": "Bangkok",
+      "country": "Thailand",
+      "continent": "Asia",
+      "lat": 13.8,
+      "lon": 100.5,
+      "tier": 1
+    },
+    {
+      "name": "Kuala Lumpur",
+      "country": "Malaysia",
+      "continent": "Asia",
+      "lat": 3.1,
+      "lon": 101.7,
+      "tier": 2
+    },
+    {
+      "name": "Jakarta",
+      "country": "Indonesia",
+      "continent": "Asia",
+      "lat": -6.2,
+      "lon": 106.8,
+      "tier": 2
+    },
+    {
+      "name": "Makati",
+      "country": "Philippines",
+      "continent": "Asia",
+      "lat": 14.6,
+      "lon": 121,
+      "tier": 2
+    },
+    {
+      "name": "Bandar Seri Begawan",
+      "country": "Brunei",
+      "continent": "Asia",
+      "lat": 4.9,
+      "lon": 114.9,
+      "tier": 1
+    },
+    {
+      "name": "Hyderabad",
+      "country": "India",
+      "continent": "Asia",
+      "lat": 17.4,
+      "lon": 78.5,
+      "tier": 2
+    },
+    {
+      "name": "Mumbai",
+      "country": "India",
+      "continent": "Asia",
+      "lat": 19.1,
+      "lon": 72.9,
+      "tier": 1
+    },
+    {
+      "name": "New Delhi",
+      "country": "India",
+      "continent": "Asia",
+      "lat": 28.6,
+      "lon": 77.2,
+      "tier": 1
+    },
+    {
+      "name": "Lahore",
+      "country": "Pakistan",
+      "continent": "Asia",
+      "lat": 31.6,
+      "lon": 74.3,
+      "tier": 2
+    },
+    {
+      "name": "Karachi",
+      "country": "Pakistan",
+      "continent": "Asia",
+      "lat": 24.9,
+      "lon": 67,
+      "tier": 1
+    },
+    {
+      "name": "Islamabad",
+      "country": "Pakistan",
+      "continent": "Asia",
+      "lat": 33.7,
+      "lon": 73.1,
+      "tier": 1
+    },
+    {
+      "name": "Dhaka",
+      "country": "Bangladesh",
+      "continent": "Asia",
+      "lat": 23.8,
+      "lon": 90.4,
+      "tier": 2
+    },
+    {
+      "name": "Tashkent",
+      "country": "Uzbekistan",
+      "continent": "Asia",
+      "lat": 41.3,
+      "lon": 69.2,
+      "tier": 2
+    },
+    {
+      "name": "Almaty",
+      "country": "Kazakhstan",
+      "continent": "Asia",
+      "lat": 43.2,
+      "lon": 76.9,
+      "tier": 1
+    },
+    {
+      "name": "Bishkek",
+      "country": "Kyrgyzstan",
+      "continent": "Asia",
+      "lat": 42.9,
+      "lon": 74.6,
+      "tier": 1
+    },
+    {
+      "name": "Baku",
+      "country": "Azerbaijan",
+      "continent": "Asia",
+      "lat": 40.4,
+      "lon": 49.9,
+      "tier": 1
+    },
+    {
+      "name": "Sydney",
+      "country": "Australia",
+      "continent": "Oceania",
+      "lat": -33.9,
+      "lon": 151.2,
+      "tier": 1
+    },
+    {
+      "name": "Melbourne",
+      "country": "Australia",
+      "continent": "Oceania",
+      "lat": -37.8,
+      "lon": 145,
+      "tier": 1
+    }
+  ]
+}

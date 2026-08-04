@@ -1,10 +1,14 @@
 name: CI
 
-# This is a single static HTML page with no build step (see README) — deploys
-# are handled by Cloudflare Workers Builds outside of GitHub Actions. This
-# workflow only validates that a push/PR hasn't broken the page: HTML
-# structure, inline JS syntax, and that the Worker's assets config still
-# bundles cleanly (wrangler --dry-run, no credentials required/used).
+# A single static HTML page with one generated section: the reach block
+# (reader-city map + the city/country figures beside it) is written from
+# data/reader-cities.json by `npm run build`. Deploys are handled by
+# Cloudflare Workers Builds outside of GitHub Actions. This workflow
+# validates that a push/PR hasn't broken the page: that the reach section
+# still matches its data source (check:reach — a page quoting a figure the
+# data doesn't support fails here), HTML structure, inline JS syntax, and
+# that the Worker's assets config still bundles cleanly (wrangler
+# --dry-run, no credentials required/used).
 
 on:
   pull_request:
