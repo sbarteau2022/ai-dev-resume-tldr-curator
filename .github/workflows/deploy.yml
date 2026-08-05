@@ -1,0 +1,65 @@
+name: Deploy Worker
+
+# Deploys the static site to its Cloudflare Worker (ai-dev-resume-tldr-curator)
+# with `wrangler deploy`. Added because the Workers Builds git integration was
+# not producing builds on push — this is the deploy path now.
+#
+# Required repository secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN  — API token with the "Workers Scripts — Edit" permission
+#                           (a Pages-only token is not enough for Workers)
+#   CLOUDFLARE_ACCOUNT_ID — the account ID shown on the Cloudflare dashboard
+#
+# Until the secrets are set, the workflow stays green and prints a warning
+# instead of failing red.
+#
+# Push to main → production deploy
+# Manual       → workflow_dispatch re-deploys from main
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deploy at a time — a rapid pair of merges shouldn't race two
+# `wrangler deploy` calls against the same Worker.
+concurrency:
+  group: deploy-worker-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Workers
+    permissions:
+      contents: read
+    # The secrets context can't be read in step `if:` directly — surface
+    # presence through an env var so the deploy step can skip gracefully.
+    env:
+      HAS_CF_SECRETS: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Never ship a broken page: the same gate CI runs (html-validate,
+      # inline-JS syntax check, wrangler dry-run), enforced on the deploy path.
+      - run: npm run check
+
+      - name: Deploy
+        if: env.HAS_CF_SECRETS == 'true'
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Deploy skipped — secrets not configured
+        if: env.HAS_CF_SECRETS != 'true'
+        run: >
+          echo "::warning::Checks passed but deploy was skipped:
+          set the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository
+          secrets to enable Cloudflare Workers deploys (see this file's header)."
