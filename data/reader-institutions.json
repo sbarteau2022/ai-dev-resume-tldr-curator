@@ -1,0 +1,96 @@
+{
+  "$comment": "Canonical confirmed-institution roster from PhilPeople download notifications through roughly May 2026. Generated artefact - edit only against confirmed PhilPeople data. scripts/build-reach.mjs injects this into public/index.html; npm run check:reach fails if the page drifts from it.",
+  "institutions": [
+    {
+      "name": "University of Michigan",
+      "loc": "Ann Arbor, USA · Math",
+      "paper": "The Markov Blanket at Scale"
+    },
+    {
+      "name": "John Carroll University",
+      "loc": "Ohio, USA · Philosophy",
+      "paper": "The 20th Century Objection · The External Factor · The Driving Mechanism"
+    },
+    {
+      "name": "Queen's University Belfast",
+      "loc": "Northern Ireland · Philosophy",
+      "paper": "War in Superposition"
+    },
+    {
+      "name": "KU Leuven",
+      "loc": "Belgium",
+      "paper": "Gravity and the Ground"
+    },
+    {
+      "name": "Massey University",
+      "loc": "New Zealand",
+      "paper": "The First Note and the Octave"
+    },
+    {
+      "name": "University of Tasmania",
+      "loc": "Australia",
+      "paper": "The Substrate Identity Continuity Theorem"
+    },
+    {
+      "name": "Cambridge",
+      "loc": "UK"
+    },
+    {
+      "name": "Hebrew University of Jerusalem",
+      "loc": "Israel"
+    },
+    {
+      "name": "National Sun Yat-sen University",
+      "loc": "Taiwan"
+    },
+    {
+      "name": "University of Leipzig",
+      "loc": "Germany"
+    },
+    {
+      "name": "University of Western Ontario",
+      "loc": "Canada"
+    },
+    {
+      "name": "University of Montreal",
+      "loc": "Canada"
+    },
+    {
+      "name": "University of Oklahoma",
+      "loc": "USA"
+    },
+    {
+      "name": "University of Kansas",
+      "loc": "USA"
+    },
+    {
+      "name": "Florida Atlantic University",
+      "loc": "USA"
+    },
+    {
+      "name": "Iowa State University",
+      "loc": "USA"
+    },
+    {
+      "name": "Boston University",
+      "loc": "USA",
+      "unconfirmed": true
+    },
+    {
+      "name": "NYU",
+      "loc": "USA"
+    },
+    {
+      "name": "UIC",
+      "loc": "USA"
+    },
+    {
+      "name": "SUTD",
+      "loc": "Singapore"
+    },
+    {
+      "name": "University of Gdansk",
+      "loc": "Poland"
+    }
+  ]
+}
